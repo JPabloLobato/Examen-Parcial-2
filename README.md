@@ -68,5 +68,20 @@ Para no desperdiciar ningún host me he tomado la molestia de utizar diferentes 
 | Escalabilidad                | Limitada                                  | Alta                                         |
 | Complejidad                  | Baja                                      | Alta                                         |
 
-### Como puede afectar la caida repentina de un nodo
+#### Protocolos de vector de distancia
+Calculan la mejor ruta hacia una red teniendo en cuenta la cantidad de saltos necesarios para llegar al destino. Cada router conoce únicamente la distancia y la dirección hacia la otra red. Tienen esta infomración porque la comparten entre sus vecinos.  
+Son perfectos en redes pequeñas ya que son faciles de configurar, pero no son recomendables para redes grandes porque son lentos.
 
+#### Protocolos de estado de enlace
+Estos a diferencia, SOn más completa en cuanto a la topología de la red. Cada router intercambia información sobre sus enlaces directos con todos los demás routers de la red, lo que les permite construir una base de datos de toda la red y calculando así una mejor ruta mediante algoritmos como le que hemos esta utilizando el algoritmo de Dijkstra.
+
+### Como puede afectar la caida repentina de un nodo
+La caida de un nodo puede ocasionar diferentes probleams dependindo si es estático o dinámico.
+Aquí algunos ejemplso:
+- Interrupción del tráfico
+- Rutas no válidas
+- Retrasos al tener que hallar una nueva ruta
+- Pérdida de datos
+- Mayor carga en los nodos vecinos
+
+- 
