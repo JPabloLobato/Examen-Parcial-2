@@ -100,3 +100,31 @@ El registro A (Address): asocia un nombre de dominio con una dirección IPv4.
 
 ### ¿Qué sucede si el servidro DNS no está disponible?
 Si el servidor DNS falla o se vuelve inestable generaría inaccesibilidad de servvicios haciendo que los dispositivos no puedan resolver nombres de dominio, siendo imposible acceder a los sitios web. Esto haría que para entrar a una web el usuario tenga que saber he introducir la dirección IP de la web.
+
+---
+
+## Misión 4: “Es una trampa… de protocolos!” – TCP vs UDP en las transmisiones
+
+#### **Comparación de TCP y UDP**
+
+| Característica                  | TCP (Protocolo de Control de Transmisión)          | UDP (Protocolo de Datagramas de Usuario)     |
+|--------------------------------|----------------------------------------------------|---------------------------------------------|
+| **Fiabilidad**                 | Altamente confiable: garantiza la entrega completa y ordenada. | No confiable: no garantiza entrega ni orden. |
+| **Orientación**                | Orientado a conexión: establece una conexión antes de transmitir datos. | Sin conexión: no requiere establecer conexión previa. |
+| **Manejo de errores**          | Detecta y corrige errores mediante retransmisión de paquetes perdidos. | No corrige errores ni retransmite paquetes. |
+| **Velocidad**                  | Más lento debido al control y manejo de errores.   | Más rápido al eliminar controles y retransmisiones. |
+| **Uso de recursos**            | Requiere más recursos para gestionar la conexión. | Menor uso de recursos: ideal para sistemas de baja latencia. |
+| **Ejemplos de aplicaciones**   | Transferencia de archivos, correos electrónicos, navegación web. | Streaming de video/audio, juegos en línea, transmisiones en tiempo real. |
+
+
+#### **Por qué TCP es confiable y orientado a conexión**
+TCP es confiable y orientado a conexión ya que garantiza la entraga asegurandose que lleguen a su destino, manda los paquetes en orden y estable conxión antes de enviar cualquier dato estableciendo un canal de comunicación, al tener todo esto genera latencía y lentitud.
+
+**Ejemplo galáctico**: Transmitir los planos de la Estrella de la Muerte a la base rebelde en un archivo comprimido para garantizar que toda la información llegue intacta y sin errores.
+
+#### **Por qué UDP es no confiable y sin conexión**
+La UDP es no confiable y sin conexión porque no asegura la llegada de los paquetes generando perdidas ocasionales y no envía los paquetes en orden, esto genera mayor rapider y baja latencia pero recordemos que puedes perder datos. Ideal para streaming.
+
+**Ejemplo galáctico**: Transmitir coordenadas de combate en tiempo real a los pilotos X-Wing. Aunque se pierda alguna coordenada, la rapidez en la transmisión es crucial para evitar un ataque enemigo.
+
+# Misión 5: Comunicación Segura o Lado Oscuro – Criptografía y Seguridad de la Red
