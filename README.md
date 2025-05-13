@@ -84,4 +84,19 @@ Aquí algunos ejemplso:
 - Pérdida de datos
 - Mayor carga en los nodos vecinos
 
-- 
+## Misión 3: Los Nombres del Holonet – DNS y Resolución de Nombres
+### ¿Qué es el DNS?
+Su funcion principal es traducir nombre de dominios de la red en direcciones IP. 
+Las máquinas no entienden que es por ejemplo `https://www.google.com` cosa que nosotros si, para ello esta el DNS que nos devuelve el ping correspondiente para llegar a la web https://www.google.com la cual por ejemplo podría ser `127.125.15.5`
+
+### ¿Cómo funciona el DNS?
+1. Consulta del cliente: nuestro dispositivo intenta acceder a `https://www.google.com`, el S.O (Sistema Operativo) pregunta al servidor DNS.
+2. Resolución recursiva: si el servidor DNS no tiene la dirección IP, hace una búsqueda hata encontrar el servidor `google.com`.
+3. Respuesta al cliente: cuando lo encuentra el servidor DNS devuelve al cliente la IP, permitiendo que se conecte.
+
+### ¿Qué es un registro y que es el registro A?
+Un registro DNS es una entrada en una base de datos asociada a los nombres de dominios.  
+El registro A (Address): asocia un nombre de dominio con una dirección IPv4.
+
+### ¿Qué sucede si el servidro DNS no está disponible?
+Si el servidor DNS falla o se vuelve inestable generaría inaccesibilidad de servvicios haciendo que los dispositivos no puedan resolver nombres de dominio, siendo imposible acceder a los sitios web. Esto haría que para entrar a una web el usuario tenga que saber he introducir la dirección IP de la web.
