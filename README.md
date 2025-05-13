@@ -105,7 +105,7 @@ Si el servidor DNS falla o se vuelve inestable generaría inaccesibilidad de ser
 
 ## Misión 4: “Es una trampa… de protocolos!” – TCP vs UDP en las transmisiones
 
-#### **Comparación de TCP y UDP**
+### **Comparación de TCP y UDP**
 
 | Característica                  | TCP (Protocolo de Control de Transmisión)          | UDP (Protocolo de Datagramas de Usuario)     |
 |--------------------------------|----------------------------------------------------|---------------------------------------------|
@@ -117,14 +117,58 @@ Si el servidor DNS falla o se vuelve inestable generaría inaccesibilidad de ser
 | **Ejemplos de aplicaciones**   | Transferencia de archivos, correos electrónicos, navegación web. | Streaming de video/audio, juegos en línea, transmisiones en tiempo real. |
 
 
-#### **Por qué TCP es confiable y orientado a conexión**
+### **Por qué TCP es confiable y orientado a conexión**
 TCP es confiable y orientado a conexión ya que garantiza la entraga asegurandose que lleguen a su destino, manda los paquetes en orden y estable conxión antes de enviar cualquier dato estableciendo un canal de comunicación, al tener todo esto genera latencía y lentitud.
 
 **Ejemplo galáctico**: Transmitir los planos de la Estrella de la Muerte a la base rebelde en un archivo comprimido para garantizar que toda la información llegue intacta y sin errores.
 
-#### **Por qué UDP es no confiable y sin conexión**
+### **Por qué UDP es no confiable y sin conexión**
 La UDP es no confiable y sin conexión porque no asegura la llegada de los paquetes generando perdidas ocasionales y no envía los paquetes en orden, esto genera mayor rapider y baja latencia pero recordemos que puedes perder datos. Ideal para streaming.
 
 **Ejemplo galáctico**: Transmitir coordenadas de combate en tiempo real a los pilotos X-Wing. Aunque se pierda alguna coordenada, la rapidez en la transmisión es crucial para evitar un ataque enemigo.
 
-# Misión 5: Comunicación Segura o Lado Oscuro – Criptografía y Seguridad de la Red
+---
+
+## Misión 5: Comunicación Segura o Lado Oscuro – Criptografía y Seguridad de la Red
+
+### **Cifrado Simétrico**
+1. **Cómo funciona:**  
+   - Utiliza una única clave secreta compartida que se comparte entre los participantes para cifrar y descifrar los mensajes.
+   - Por ejemplo, en el caso de Leia y Luke deberían compartir una frase clave secreta para cifrar y decodificar sus holomensajes. Solo ellos deben saberlo si lo sabe alguien más el cifrado se compromete.
+
+2. **Ventajas:**
+   - Es rápido y eficiente, se suele utilizar para grandes cantidades de datos.
+   - Fácil en sistemas con pocos participantes.
+
+3. **Desventajas:**
+   - Requiere que la clave secreta que debe ser compartida de forma segura previamente. 
+
+### **Cifrado Asimétrico**
+1. **Cómo funciona:**  
+   - Utiliza un par de claves, una clave pública y una clave privada.  
+   - La clave pública no pasa nada si se publica se usa para cifrar mensajes. Solo la clave privada correspondiente puede descifrarlos.  
+   - Por ejemplo, si la Alianza quiere enviar un mensaje a un nuevo aliado sin haber intercambiado una clave secreta previamente, podrían usar el cifrado asimétrico. El aliado comparte su clave pública con la Alianza, que la utiliza para cifrar el mensaje. Solo el aliado, con su clave privada, puede leerlo.
+
+2. **Ventajas:**
+   - No es necesario compartir la clave privada, lo que elimina el problema de transmisión segura de claves.
+   - Permite autenticación y no repudio: usando la clave privada del remitente para firmar digitalmente un mensaje, se puede verificar que realmente proviene de él.
+
+3. **Desventajas:**
+   - Es más lento que el cifrado simétrico, especialmente para grandes volúmenes de datos.
+   - Consume más recursos computacionales.
+
+### **Importancia de Autenticación y No Repudio**
+- **Autenticación:**  
+  Garantiza que el mensaje proviene de quien dice ser. Esto se puede lograr firmando digitalmente el mensaje con la clave privada del remitente.  
+  Ejemplo galáctico: Leia firma un mensaje con su clave privada, y los destinatarios pueden verificar su autenticidad usando su clave pública.
+
+- **No Repudio:**  
+  Evita que el remitente niegue haber enviado un mensaje. La firma digital asegura que solo el propietario de la clave privada pudo haber firmado el mensaje.
+
+### **Protocolos Seguros y su Importancia**
+- Usar protocolos seguros como **SSH** en lugar de **Telnet** es crucial para proteger las comunicaciones.  
+  - **Telnet:** Transmite toda la información (incluidas contraseñas) en texto plano, lo que facilita su interceptación.
+  - **SSH:** Cifra todas las transmisiones, protegiendo la información sensible incluso si es interceptada.
+
+**Ejemplo rebelde:**  
+Los administradores de la red rebelde deben usar SSH para gestionar remotamente los sistemas de las bases rebeldes y evitar que el Imperio intercepte las credenciales.
